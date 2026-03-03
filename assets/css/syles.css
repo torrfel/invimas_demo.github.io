@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+}
+
+body {
+    background: #eef2f7;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 1300px;
+    width: 100%;
+    background: white;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+/* encabezado institucional */
+.header-institucional {
+    background: #0b2b4f;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 4px solid #4db6ac;
+}
+
+.header-institucional h2 {
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+.header-institucional i {
+    font-size: 2rem;
+    color: #4db6ac;
+}
+
+.badge-etapa {
+    background: #4db6ac;
+    color: #0b2b4f;
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-left: auto;
+}
+
+/* layout principal */
+.main-layout {
+    display: flex;
+    min-height: 700px;
+}
+
+/* barra lateral de submódulos (exactamente como en ppt) */
+.submodulos {
+    width: 280px;
+    background: #f8fafd;
+    border-right: 1px solid #dde3e9;
+    padding: 2rem 1rem;
+}
+
+.submodulos-titulo {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #4a5b6e;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.submodulo-item {
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.25rem;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #1e2a3a;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: default;
+}
+
+.submodulo-item.activo {
+    background: #e0f2f1;
+    color: #00695c;
+    font-weight: 600;
+    border-left: 5px solid #00695c;
+}
+
+.submodulo-item i {
+    width: 20px;
+    color: #7089a8;
+}
+
+.submodulo-item.activo i {
+    color: #00695c;
+}
+
+/* área de trabajo (contenido dinámico) */
+.contenido {
+    flex: 1;
+    padding: 2rem 2.5rem;
+    background: white;
+}
+
+/* miga de tipo de actor */
+.actor-selector {
+    background: #f2f5f8;
+    border-radius: 60px;
+    padding: 0.4rem 0.4rem 0.4rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ccd7e4;
+}
+
+.actor-selector span {
+    font-weight: 600;
+    color: #0b2b4f;
+}
+
+.actor-selector select {
+    background: white;
+    border: 1px solid #b0c4d9;
+    border-radius: 40px;
+    padding: 0.4rem 2rem 0.4rem 1rem;
+    font-weight: 500;
+    color: #0b2b4f;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230b2b4f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem center;
+}
+
+/* formularios */
+.form-section {
+    margin-top: 1.5rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem 2rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.campo label {
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #2c3e5c;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    padding: 0.8rem 1rem;
+    border: 1.5px solid #e0e7ef;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    transition: 0.2s;
+    background: white;
+}
+
+.campo input:focus,
+.campo select:focus {
+    border-color: #00695c;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 105, 92, 0.1);
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.radio-group {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-weight: 500;
+    text-transform: none;
+    font-size: 0.95rem;
+    color: #1e2a3a;
+}
+
+.aviso-nota {
+    background: #fef9e7;
+    border-left: 5px solid #f4b740;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    margin: 1.8rem 0;
+    font-size: 0.9rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.checks {
+    margin: 1.2rem 0;
+}
+
+.checks p {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checks i {
+    color: #2e7d32;
+}
+
+/* botones */
+.botonera {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    border-top: 1px dashed #cbd5e1;
+    padding-top: 2rem;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border-radius: 40px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #a0b8cc;
+    color: #25476e;
+}
+
+.btn-outline:hover {
+    background: #e9f0f9;
+}
+
+.btn-primary {
+    background: #0b2b4f;
+    color: white;
+    box-shadow: 0 8px 14px -8px #0b2b4f;
+}
+
+.btn-primary:hover {
+    background: #123b66;
+    transform: scale(1.02);
+}
+
+.btn-success {
+    background: #00695c;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #00897b;
+}
+
+/* card de declaración */
+.declaracion-box {
+    background: #f2f9f8;
+    border-radius: 24px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+    border: 1px solid #cceae5;
+}
+
+.declaracion-box label {
+    display: block;
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+/* ocultar/mostrar páginas */
+.pagina {
+    display: none;
+}
+
+.pagina.activa {
+    display: block;
+}
+
+hr {
+    margin: 2rem 0 1rem;
+    border: 1px solid #edf2f7;
+}
+
+.chip-info {
+    background: #e9ecf3;
+    color: #1e2f4a;
+    padding: 0.2rem 1rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* icono de check en submodulos */
+.submodulo-item i.fa-check-circle {
+    color: #2e7d32;
+    margin-left: auto;
+}

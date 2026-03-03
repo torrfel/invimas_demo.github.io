@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INVIMAS · Prototipo Etapa 0 (Patrocinador)</title>
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/syles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- header fijo -->
+        <div class="header-institucional">
+            <i class="fas fa-flask"></i>
+            <h2>INVIMAS · Evaluación de Protocolos</h2>
+            <div class="badge-etapa">Etapa 0 · Preparación del actor</div>
+        </div>
+
+        <div class="main-layout">
+            <!-- submódulos laterales (siempre visibles) -->
+            <div class="submodulos">
+                <div class="submodulos-titulo">Submódulos</div>
+                <div class="submodulo-item activo" id="menu-pag1">
+                    <i class="fas fa-building"></i> 2.1 Datos del patrocinador
+                    <i class="fas fa-check-circle" style="color:#2e7d32;"></i>
+                </div>
+                <div class="submodulo-item" id="menu-pag2">
+                    <i class="fas fa-address-card"></i> 2.1.1 Identificación legal
+                </div>
+                <div class="submodulo-item" id="menu-pag3">
+                    <i class="fas fa-envelope"></i> 2.1.2 Información de contacto
+                </div>
+                <div class="submodulo-item" id="menu-pag4">
+                    <i class="fas fa-handshake"></i> 2.2 Relación CRO
+                </div>
+                <div class="submodulo-item" id="menu-pag5">
+                    <i class="fas fa-check-double"></i> 2.3 Declaración y validación
+                </div>
+                <div style="margin-top: 2rem; font-size:0.85rem; color:#7f8fa4; padding:1rem;">
+                    <i class="fas fa-info-circle"></i> Todos los campos con <span style="color:#b22222;">*</span> son
+                    obligatorios
+                </div>
+            </div>
+
+            <!-- contenido principal: 5 páginas (una por cada submódulo) -->
+            <div class="contenido">
+                <!-- selector de actor fijo arriba (siempre visible) -->
+                <div class="actor-selector">
+                    <span><i class="fas fa-user-tag"></i> Tipo de actor:</span>
+                    <select>
+                        <option selected>Patrocinador ▼</option>
+                        <option>IPS / Centro de Investigación</option>
+                        <option>CEI</option>
+                        <option>CRO</option>
+                    </select>
+                </div>
+
+                <!-- PÁGINA 1: 2.1 Datos del patrocinador (bienvenida / vista previa) -->
+                <div id="pagina1" class="pagina activa">
+                    <h2 style="color:#0b2b4f; margin-bottom: 1.5rem;">📋 2.1 Datos del patrocinador</h2>
+                    <p style="margin-bottom: 2rem; color:#36597e;">Complete la información legal y de contacto. Puede
+                        guardar borrador en cualquier momento.</p>
+                    <div style="background:#eaf2fd; border-radius: 30px; padding: 2rem; text-align: center;">
+                        <i class="fas fa-arrow-left" style="color:#00695c; font-size: 2rem; opacity:0.6;"></i>
+                        <h3 style="margin: 1rem 0;">Utilice el menú lateral para navegar</h3>
+                        <p>Comience por <strong>2.1.1 Identificación legal</strong></p>
+                    </div>
+                </div>
+
+                <!-- PÁGINA 2: 2.1.1 Identificación legal -->
+                <div id="pagina2" class="pagina">
+                    <h2 style="color:#0b2b4f; margin-bottom: 1.5rem;"> 2.1.1 Identificación legal</h2>
+                    <div class="form-grid">
+                        <div class="campo"><label>Razón social *</label><input type="text"
+                                placeholder="Ej. Pharma Colombia S.A.S"></div>
+                        <div class="campo"><label>NIT *</label><input type="text" placeholder="901.XXX.X"></div>
+                        <div class="campo"><label>Registro mercantil</label><input type="text" placeholder="Opcional">
+                        </div>
+                        <div class="campo"><label>País</label><input type="text" value="Colombia"></div>
+                        <div class="campo"><label>Ciudad *</label><input type="text" placeholder="Bogotá D.C."></div>
+                        <div class="campo"><label>Dirección *</label><input type="text" placeholder="Calle 100 # 15-80">
+                        </div>
+                        <div class="campo"><label>Teléfono institucional *</label><input type="tel"
+                                placeholder="+57 601 5555555"></div>
+                        <div class="campo"><label>Correo institucional *</label><input type="email"
+                                placeholder="contacto@pharma.co"></div>
+                    </div>
+                    <div class="campo" style="margin-top:1rem;">
+                        <label>Tipo de patrocinador</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="tipoPat" checked> Industria farmacéutica</label>
+                            <label><input type="radio" name="tipoPat"> Academia</label>
+                            <label><input type="radio" name="tipoPat"> Fundación / ONG</label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="form-grid">
+                        <div class="campo"><label>Representante legal *</label><input type="text"
+                                placeholder="Nombre completo"></div>
+                        <div class="campo"><label>Tipo y número documento *</label><input type="text"
+                                placeholder="C.C. 123456789"></div>
+                    </div>
+                </div>
+
+                <!-- PÁGINA 3: 2.1.2 Información de contacto regulatorio -->
+                <div id="pagina3" class="pagina">
+                    <h2 style="color:#0b2b4f; margin-bottom: 1.5rem;"> 2.1.2 Información de contacto regulatorio</h2>
+                    <div class="form-grid" style="grid-template-columns:1fr;">
+                        <div class="campo"><label>Nombre completo *</label><input type="text"
+                                placeholder="Dra. María Gómez"></div>
+                        <div class="campo"><label>Cargo *</label><input type="text"
+                                placeholder="Directora de Asuntos Regulatorios"></div>
+                        <div class="campo"><label>Correo electrónico *</label><input type="email"
+                                placeholder="m.gomez@pharma.co"></div>
+                        <div class="campo"><label>Teléfono *</label><input type="tel" placeholder="+57 300 1234567">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PÁGINA 4: 2.2 Relación CRO -->
+                <div id="pagina4" class="pagina">
+                    <h2 style="color:#0b2b4f; margin-bottom: 1.5rem;"> 2.2 Relación CRO</h2>
+                    <div class="campo">
+                        <label>¿El patrocinador actúa mediante una CRO?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="croSiNo" id="croSi"> Sí</label>
+                            <label><input type="radio" name="croSiNo" id="croNo" checked> No</label>
+                        </div>
+                    </div>
+                    <div id="croOpciones"
+                        style="display: none; background:#f1f6fe; padding:1.5rem; border-radius:20px; margin-top:1rem;">
+                        <div class="campo"><label>Definir alcance de delegación</label>
+                            <div style="display:flex; gap:1.5rem; flex-wrap:wrap; margin:0.5rem 0;">
+                                <label><input type="checkbox"> Sometimiento</label>
+                                <label><input type="checkbox"> Respuesta a requerimientos</label>
+                                <label><input type="checkbox"> Seguimiento</label>
+                            </div>
+                        </div>
+                        <div class="aviso-nota">
+                            <i class="fas fa-info-circle" style="font-size:2rem; color:#00695c;"></i>
+                            <div><strong>✔ La CRO debe existir previamente</strong><br> Datos se cargan automáticamente.
+                                La relación patrocinador–CRO debe quedar registrada con fecha de inicio y vigencia.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PÁGINA 5: 2.3 Declaración y validación -->
+                <div id="pagina5" class="pagina">
+                    <h2 style="color:#0b2b4f; margin-bottom: 1.5rem;"> 2.3 Declaración y validación</h2>
+                    <div class="declaracion-box">
+                        <label>
+                            <input type="checkbox" style="transform: scale(1.2); margin-right: 10px;">
+                            Declaro que la información suministrada es veraz, completa y corresponde a la realidad
+                            jurídica de la empresa.
+                        </label>
+                        <label>
+                            <input type="checkbox" style="transform: scale(1.2); margin-right: 10px;">
+                            Autorizo la notificación electrónica a través de INVIMAGIL y al correo institucional
+                            registrado.
+                        </label>
+                    </div>
+                    <div class="checks">
+                        <p><i class="fas fa-check-circle"></i> 2.1.1 Identificación legal <span
+                                class="chip-info">completado</span></p>
+                        <p><i class="fas fa-check-circle"></i> 2.1.2 Contacto regulatorio <span
+                                class="chip-info">completado</span></p>
+                        <p><i class="fas fa-check-circle"></i> 2.2 Relación CRO <span class="chip-info">pendiente</span>
+                        </p>
+                    </div>
+                    <p style="background:#edf2fa; padding:1rem; border-radius:16px;"><i
+                            class="fas fa-exclamation-triangle" style="color:#d97706;"></i> Una vez enviado, no podrá
+                        modificar los datos sin solicitar apertura.</p>
+                </div>
+
+                <!-- Botonera fija para navegar -->
+                <div class="botonera">
+                    <button class="btn btn-outline" id="btnAnterior"><i class="fas fa-chevron-left"></i>
+                        Anterior</button>
+                    <div style="display: flex; gap:1rem;">
+                        <button class="btn btn-outline"><i class="fas fa-save"></i> Guardar borrador</button>
+                        <button class="btn btn-primary" id="btnSiguiente">Continuar <i
+                                class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <p style="text-align:right; margin-top:0.5rem; font-size:0.85rem; color:#a0b2c6;">Paso <span
+                        id="indicador-pagina">1/5</span> (Etapa 0)</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
